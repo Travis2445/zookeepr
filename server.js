@@ -1,10 +1,11 @@
 const express = require('express');
 const { animals } = require('./data/animals');
 
+const PORT = process.env.PORT || 3001;
 const app = express();
-const PORT = 3001;
 const animalsData = '/api/animals';
 
+// filterByQuery method ensures that query.personalityTraits is always an array before the .forEach() method executes.
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
     // saving animalsArray as filteredResults here:
